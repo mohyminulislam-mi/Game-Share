@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1",
+    "title": "PlayerUnknown's Battlegrounds",
+    "coverPhoto": "https://i.ibb.co.com/fdfv67yF/pubg.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Call of Duty: Mobile",
+    "coverPhoto": "https://i.ibb.co.com/HT1g8XV2/codm.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "COD Mobile delivers intense multiplayer and battle royale action with iconic maps and weapons.",
+    "ratings": "4.6",
+    "developer": "Activision"
+  },
+  {
+    "id": "3",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://i.ibb.co.com/1GQ1sSmj/genshin.webp",
+    "category": "RPG",
+    "downloadLink": "https://genshin.hoyoverse.com/en",
+    "description": "Explore the vast world of Teyvat in this open-world RPG filled with elemental magic and epic quests.",
+    "ratings": "4.7",
+    "developer": "HoYoverse"
+  },
+  {
+    "id": "4",
+    "title": "Fortnite",
+    "coverPhoto": "https://i.ibb.co.com/53ZGR5k/minecraft.webp",
+    "category": "Battle Royale",
+    "downloadLink": "https://www.epicgames.com/fortnite/en-US/home",
+    "description": "Fortnite blends building mechanics with fast-paced combat in a vibrant battle royale universe.",
+    "ratings": "4.4",
+    "developer": "Epic Games"
+  },
+  {
+    "id": "5",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co.com/ZpQyQV25/minecraft.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/en-us",
+    "description": "Create, explore, and survive in a blocky world with endless possibilities and multiplayer adventures.",
+    "ratings": "4.8",
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "6",
+    "title": "Clash Royale",
+    "coverPhoto": "https://i.ibb.co.com/Tf8k44f/clashroyale.webp",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashroyale/",
+    "description": "Clash Royale combines card strategy and real-time battles in a fast-paced arena showdown.",
+    "ratings": "4.3",
+    "developer": "Supercell"
+  },
+
+  {
+    "id": "7",
+    "title": "League of Legends: Wild Rift",
+    "coverPhoto": "https://i.ibb.co.com/wNHqgKq4/wildrift.webp",
+    "category": "MOBA",
+    "downloadLink": "https://wildrift.leagueoflegends.com/en-us/",
+    "description": "Wild Rift brings the classic LoL experience to mobile with fast-paced 5v5 strategic gameplay.",
+    "ratings": "4.5",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "8",
+    "title": "Free Fire",
+    "coverPhoto": "https://i.ibb.co.com/Y7YQK9HQ/freefire.webp",
+    "category": "Battle Royale",
+    "downloadLink": "https://ff.garena.com/",
+    "description": "Free Fire offers quick survival matches with unique characters and intense combat mechanics.",
+    "ratings": "4.3",
+    "developer": "Garena"
+  }
+]
