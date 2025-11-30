@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import games from "./../assets/games.png";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {  toast } from "react-toastify";
 import { motion } from "framer-motion";
 
 const Newsletter = () => {
@@ -80,14 +79,13 @@ const Newsletter = () => {
         >
           <img src={games} alt="Games" />
         </motion.div>
-
-        <ToastContainer
+        {/* <ToastContainer
           position="top-right"
           autoClose={1000}
           pauseOnHover={false}
           draggable
           theme="light"
-        />
+        /> */}
       </motion.div>
     </section>
   );

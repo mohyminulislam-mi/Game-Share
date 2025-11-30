@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
-import Swal from "sweetalert2";
 
 const Login = () => {
   const { singInUser, singInWithGoogle } = useContext(AuthContext);
@@ -23,14 +22,7 @@ const Login = () => {
 
     singInUser(email, password)
       .then((result) => {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "User login successful.",
-          showConfirmButton: false,
-          timer: 1500,
-          height: "200px",
-        });
+        toast.success("User login successful.");
         console.log(result);
         e.target.reset();
         navigate(location.state || "/");
@@ -43,14 +35,7 @@ const Login = () => {
   const handleSinginGoogle = () => {
     singInWithGoogle()
       .then((result) => {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "User login successful.",
-          showConfirmButton: false,
-          timer: 1500,
-          height: "200px",
-        });
+        toast.success("Google login successful.");
         console.log(result);
         navigate(location.state || "/");
       })
