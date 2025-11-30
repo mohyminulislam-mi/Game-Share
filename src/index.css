@@ -32,3 +32,6 @@ body {
 .swiper-pagination-bullet{
     background-color: #00c951 !important;
 }
+.swal2-confirm{
+    background-color: #00c951 !important;
+}

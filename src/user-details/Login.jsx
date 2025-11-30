@@ -1,10 +1,10 @@
-import React, { use, useState } from "react";
-import { Link, Links, useLocation, useNavigate } from "react-router";
+import React, { useState, useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext/AuthContext";
-import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const { singInUser, singInWithGoogle } = use(AuthContext);
+  const { singInUser, singInWithGoogle } = useContext(AuthContext);
   const [passwordError, setPasswordError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,41 +14,39 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // password validation chcek
+
     if (!passwordPattern.test(password)) {
       setPasswordError("Your password format is invalid.");
       return;
     }
+
     singInUser(email, password)
       .then((result) => {
         console.log(result);
-        Swal.fire({
-          title: "Login Successful",
-          icon: "success",
-          draggable: true,
-        });
+        toast.success("User login successful.");
         e.target.reset();
         navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.message);
       });
   };
-  // singin with google
+
   const handleSinginGoogle = () => {
     singInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        console.log(result);
+        toast.success("Google login successful.");
         navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.message);
       });
   };
 
   return (
     <div className="hero min-h-screen">
-            <title>Game Share | Login Now</title>
+      <title>Game Share | Login Now</title>
       <div className="card w-[90%] lg:w-[25%] md:w-[60%] bg-base-100 shrink-0 shadow-2xl">
         <div className="card-body">
           <h1 className="text-3xl font-semibold text-center mb-5">Login</h1>
@@ -83,7 +81,9 @@ const Login = () => {
                   Forgot password?
                 </Link>
               </div>
-              <button className="btn bg-green-500 text-white mt-2">Login</button>{" "}
+              <button className="btn bg-green-500 text-white mt-2">
+                Login
+              </button>{" "}
             </fieldset>
           </form>
           <div className="text-center mt-1 flex flex-col">

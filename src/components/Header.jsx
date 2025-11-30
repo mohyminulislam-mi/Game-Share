@@ -1,30 +1,46 @@
 import { Link, NavLink, useNavigate } from "react-router";
-import UserImg from "../assets/user.png";
 import Logo from "../assets/Logo.png";
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext/AuthContext";
-import Swal from "sweetalert2";
 import { CgProfile } from "react-icons/cg";
 import { IoExitOutline } from "react-icons/io5";
+import Swal from 'sweetalert2'
 
 const Header = () => {
   const { user, singOutUser } = use(AuthContext);
   const navigate = useNavigate();
 
-  const handleSingOut = () => {
-    singOutUser()
-      .then(() => {
-        Swal.fire({
-          title: "Log Out Successful",
-          icon: "success",
-          draggable: true,
-        });
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
+const handleSingOut = () => {
+  singOutUser()
+    .then(() => {
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const confirmLogout = () => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You will be logged out!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#00c951",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "log out!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      handleSingOut();
+      Swal.fire({
+        title: "Logged out!",
+        text: "You have been successfully logged out.",
+        icon: "success"
       });
-  };
+    }
+  });
+};
+
   const menus = (
     <>
       <li>
@@ -70,7 +86,7 @@ const Header = () => {
           <img src={Logo} alt="logo" />
         </Link>
       </div>
-        {/* Desktop Menu */}
+      {/* Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{menus}</ul>
       </div>
@@ -83,10 +99,7 @@ const Header = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="User Avatar"
-                  src={user?.photoURL}
-                />
+                <img alt="User Avatar" src={user?.photoURL} />
               </div>
             </button>
             <ul
@@ -103,7 +116,7 @@ const Header = () => {
               </li>
               <li>
                 <button
-                  onClick={handleSingOut}
+                  onClick={confirmLogout}
                   className="mt-2 bg-green-500 text-white py-2 rounded flex items-center justify-center gap-1"
                 >
                   <IoExitOutline /> Sign Out
@@ -128,7 +141,6 @@ const Header = () => {
           </div>
         )}
       </div>
-     
     </div>
   );
 };
